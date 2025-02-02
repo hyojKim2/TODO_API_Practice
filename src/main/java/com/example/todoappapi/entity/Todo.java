@@ -1,17 +1,23 @@
 package com.example.todoappapi.entity;
 
+import java.util.UUID;
+
 public class Todo {
 
+    private static Long counter= 0L;
     String title;
     String text;
     String deadline;
     Boolean checked;
+    Long id;
 
     public Todo(String title, String text, String deadline) {
         this.title=title;
         this.text=text;
         this.deadline=deadline;
         this.checked=false;
+        this.id= ++counter;
+
     }
 
     //getter
@@ -19,6 +25,7 @@ public class Todo {
     public String getText(){return text;}
     public String getDeadline(){return deadline;}
     public boolean getChecked(){return checked;}
+    public Long getID(){return id;}
 
     //setter
     public void setTitle(String title){this.title=title;}
